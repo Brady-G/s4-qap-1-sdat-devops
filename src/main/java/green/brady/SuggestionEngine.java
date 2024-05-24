@@ -1,6 +1,7 @@
 package green.brady;
 
 import java.io.IOException;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -47,6 +48,10 @@ public class SuggestionEngine {
         Stream.of(new String(Files.readAllBytes( dictionaryFile )).toLowerCase().split("\\n")).forEach( (word) ->{
             getWordSuggestionDB().compute( word, (k, v) -> v == null ? 1 : v + 1  );
         });
+    }
+
+    public void loadDictionaryData(URI dictionaryFile) throws IOException {
+        loadDictionaryData(Paths.get(dictionaryFile));
     }
 
     /**
