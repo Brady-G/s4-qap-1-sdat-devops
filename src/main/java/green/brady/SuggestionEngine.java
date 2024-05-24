@@ -85,7 +85,7 @@ public class SuggestionEngine {
     }
 
     public void setWordSuggestionDB(SuggestionsDatabase wordSuggestionDB) {
-        this.wordSuggestionDB = wordSuggestionDB;
+//        this.wordSuggestionDB = wordSuggestionDB;
     }
 
     public static void main(String[] args) throws Exception {
